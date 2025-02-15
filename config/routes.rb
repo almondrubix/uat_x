@@ -14,5 +14,11 @@ Rails.application.routes.draw do
   root 'static_pages#index'
 
   get 'about', to: 'static_pages#about_us'
+
   get 'contact', to: 'static_pages#contact_us'
+
+  resources "tweets"
+
+
+
 end
