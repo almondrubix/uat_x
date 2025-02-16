@@ -38,9 +38,11 @@
         <li class="nav-item">
           <%= link_to "New Tweet", new_tweet_path, class: "nav-link active" %>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
+        <% if user_signed_in? %>
+          <li class="nav-item"> 
+              <%= link_to "My Profile", profile_path(current_user), class: "nav-link" %>
+          </li>
+        <% end %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
@@ -60,6 +62,7 @@
         <%= link_to "Sign Up", new_user_registration_path, class: "nav-link active" %>&nbsp;
         <%= link_to "Sign In", new_user_session_path, class: "nav-link active" %>&nbsp;
       <% end %>
+
     </div>
   </div>
 </nav>
