@@ -19,4 +19,9 @@ class TweetsController < ApplicationController
 		#this is the code that wil create a new tweet
 		end
 	end
+
+	def index
+		@tweets = Tweet.all
+	end
+
 end
